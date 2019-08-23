@@ -1,0 +1,22 @@
+{
+  "name": "vuepress-plugin-code-segment",
+  "version": "0.0.1",
+  "description": "vuepress code segment plugin",
+  "main": "src/index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sillyY/vuepress-plugin-code-segment.git"
+  },
+  "keywords": [
+    "vuepress",
+    "vuepress-plugin",
+    "code"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sillyY/vuepress-plugin-code-segment/issues"
+  },
+  "homepage": "https://github.com/sillyY/vuepress-plugin-code-segment#readme"
+}
