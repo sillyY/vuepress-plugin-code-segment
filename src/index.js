@@ -1,21 +1,44 @@
+const path = require('path')
 module.exports = (options, ctx) => {
-  name: 'vuepress-plugin-code-segment'
-  extendMarkdown: md => {
-    md.set({ breaks: true })
-    // md.use(require('markdown-it-container'), 'demo', {
-    //   validate: function(params) {
-    //     return params.trim().match(/^spoiler\s+(.*)$/)
-    //   },
-    //   render: function(tokens, idx) {
-    //     var m = tokens[idx].info.trim().match(/^spoiler\s+(.*)$/)
-    //     if (tokens[idx].nesting === 1) {
-    //       // opening tag
-    //       return '<details><summary>' + m[1] + '</summary>\n'
-    //     } else {
-    //       // closing tag
-    //       return '</details>\n'
-    //     }
-    //   }
-    // })
+  return {
+    name: 'vuepress-plugin-code-segment',
+    clientRootMixin: path.resolve(__dirname, './mixin.js'),
+    extendMarkdown: md => {
+      md.use(require('markdown-it-container'), 'demo', {
+        render: function(tokens, idx) {
+          const { nesting, info } = tokens[idx]
+          if (nesting === -1) {
+            return `
+            </div>
+              <div class="ibox-footer"></div>
+              </div>
+            `
+          }
+
+          let code = ''
+          let i = 0,
+            len = tokens.length
+
+          for (; i < len; i++) {
+            const { type, content } = tokens[i]
+            if (type === 'container_demo_close') break
+            if (!content) continue
+            if (type === 'fence') {
+              codeStr = encodeURIComponent(content)
+            }
+          }
+          return `
+          <div
+            class="ibox"
+            
+            data-code="${codeStr}">
+              <div class="ibox-content">
+                <div class="ibox-demo"></div>
+              </div>
+              <div class="ibox-code">
+        `
+        }
+      })
+    }
   }
 }

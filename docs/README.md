@@ -6,6 +6,8 @@ actionLink: /
 - __[pica](https://nodeca.github.io/pica/demo/)__ - high quality and fast image
   resize in browser.
   
+<p id='label'>123</p>
+
 ::: demo
 ```html
 <template>
