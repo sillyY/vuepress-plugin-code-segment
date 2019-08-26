@@ -23,9 +23,9 @@ actionLink: /
   export default {
     data: () => ({ num: 0 }),
     methods: {
-      add() { this.num += 0 },
+      add() { this.num += 1 },
       reduce() {
-        this.num -= 0
+        this.num -= 1
       }
     }
   }
@@ -37,30 +37,4 @@ actionLink: /
 </style>
 ```
 
-:::
-
-# 1123
-
-::: demo
-```html
-<template>
-  <div class="box-vue">
-    <button @click="plus">+</button>
-    <button @click="minus">-</button>
-    {{ number }}
-  </div>
-</template>
-<script>
-export default {
-  data: () => ({ number: 0 }),
-  methods: {
-    plus () { this.number++ },
-    minus () { this.number-- }
-  }
-}
-</script>
-<style>
-.box-vue { color: red; }
-</style>
-```
 :::
