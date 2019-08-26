@@ -10,6 +10,9 @@ export default function compile() {
     const footerNode = $(node, 'ibox-footer')
     const appNode = $(displayNode[0], 'ibox-demo')
 
+    // let config = decodeURIComponent(window['$VUEPRESS_CODE_SEGMENT']);
+    // config = config ? JSON.parse(config) : {};
+    console.log(window.$VUEPRESS_DEMO_BLOCK)
     const code = decodeURIComponent(node.dataset.code)
 
     const detail = getVueDetail(code)

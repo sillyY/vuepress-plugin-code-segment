@@ -2,8 +2,15 @@ const path = require('path')
 module.exports = (options, ctx) => {
   return {
     name: 'vuepress-plugin-code-segment',
+    define() {
+      console.log('options为: ', options)
+      return {
+        SETTINGS: options.settings || {}
+      }
+    },
     clientRootMixin: path.resolve(__dirname, './mixin.js'),
     extendMarkdown: md => {
+      // console.log('options 为: ',options)
       md.use(require('markdown-it-container'), 'demo', {
         render: function(tokens, idx) {
           const { nesting, info } = tokens[idx]
