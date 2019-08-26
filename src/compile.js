@@ -1,4 +1,4 @@
-import { $, getVueDetail } from './utils'
+import { $, getVueDetail } from './parse'
 export default function compile() {
   const nodes = $(document, 'ibox')
   if (!nodes || !nodes.length) return
@@ -16,7 +16,7 @@ export default function compile() {
 
     const Comp = Vue.extend(detail.script);
     const app = new Comp().$mount();
-    appNode.appendChild(app.$el);
+    appNode[0].appendChild(app.$el);
   })
 }
 

@@ -4,6 +4,7 @@
   "description": "vuepress code segment plugin",
   "main": "src/index.js",
   "scripts": {
+    "start": "vuepress dev docs --no-clear-screen --temp .temp",
     "dev": "vuepress dev docs --no-clear-screen --temp .temp",
     "docs:build": "vuepress build docs"
   },
