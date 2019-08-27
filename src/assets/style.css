@@ -18,6 +18,17 @@
   height: 0;
   padding: 0 !important;
 }
+.show {
+  height: auto;
+}
+
+/* 重写markdown样式 */
+.language-html {
+  border-radius: 0 !important;
+  margin: 0 !important;
+}
+
+
 .ibox-footer {
   height: 80px;
   background: #f0f3f8;

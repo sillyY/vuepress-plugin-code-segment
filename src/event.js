@@ -1,18 +1,28 @@
 import { $ } from './parse'
-function init(node) {
-  initHover(node)
+function initEvent(node) {
+  const footerNode = $(node, '.ibox-footer')
+  const codeNode = $(node, '.ibox-code')
+  const iconNode = $(footerNode[0], 'img')
+  initHover(footerNode[0], iconNode[0])
+
+  initClick(footerNode[0], codeNode[0])
 }
 
-function initHover(node) {
-  const footerNode = $(document, '.ibox-footer')
-  const btnNode = $(footerNode[0], '.btn')
-  const iconNode = $(btnNode[0], 'img')
-  footerNode[0].addEventListener('mouseover', function() {
-    iconNode[0].setAttribute('src', '/icon-caret-bottom-blue.svg')
+function initHover(node, icon) {
+  const iconUrl = window.$VUEPRESS_DEMO_BLOCK.showText.icon,
+    hoverIconUrl = window.$VUEPRESS_DEMO_BLOCK.showText.hoverIcon
+  node.addEventListener('mouseover', function() {
+    icon.setAttribute('src', hoverIconUrl)
   })
-  footerNode[0].addEventListener('mouseout', function() {
-    iconNode[0].setAttribute('src', '/icon-caret-bottom.svg')
+  node.addEventListener('mouseout', function() {
+    icon.setAttribute('src', iconUrl)
   })
 }
 
-export default init
+function initClick(node, handler) {
+  node.addEventListener('click',function(){
+    handler.classList.add('show')
+  })
+}
+
+export default initEvent

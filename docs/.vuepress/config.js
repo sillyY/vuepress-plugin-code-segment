@@ -14,8 +14,8 @@ module.exports = {
       {
         settings: {
           showText: {
-            icon: './public/icon-caret-bottom.svg',
-            hoverIcon: '',
+            icon: '/icon-caret-bottom.svg',
+            hoverIcon: '/icon-caret-bottom-blue.svg',
             text: 'show code'
           }
         }

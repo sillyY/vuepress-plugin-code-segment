@@ -9,7 +9,6 @@ module.exports = (options, ctx) => {
     },
     clientRootMixin: path.resolve(__dirname, './mixin.js'),
     extendMarkdown: md => {
-      // console.log('options 为: ',options)
       md.use(require('markdown-it-container'), 'demo', {
         render: function(tokens, idx) {
           const { nesting, info } = tokens[idx]
@@ -18,7 +17,7 @@ module.exports = (options, ctx) => {
             </div>
               <div class="ibox-footer">
                 <div class="btn">
-                  <img class='icon' src="${options.settings.showText.icon}"/>
+                  <img src="${options.settings.showText.icon}"/>
                   <span>${options.settings.showText.text}</span>
                 </div>
               </div>
@@ -35,7 +34,7 @@ module.exports = (options, ctx) => {
             if (type === 'container_demo_close') break
             if (!content) continue
             if (type === 'fence') {
-              codeStr = encodeURICompdionent(content)
+              codeStr = encodeURIComponent(content)
             }
           }
           return `
