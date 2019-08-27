@@ -13,7 +13,11 @@ module.exports = {
       require('../../src/index.js'),
       {
         settings: {
-          showText: 'show code'
+          showText: {
+            icon: './public/icon-caret-bottom.svg',
+            hoverIcon: '',
+            text: 'show code'
+          }
         }
       }
     ]

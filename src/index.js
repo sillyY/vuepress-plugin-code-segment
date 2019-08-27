@@ -3,7 +3,6 @@ module.exports = (options, ctx) => {
   return {
     name: 'vuepress-plugin-code-segment',
     define() {
-      console.log('options为: ', options)
       return {
         SETTINGS: options.settings || {}
       }
@@ -17,7 +16,12 @@ module.exports = (options, ctx) => {
           if (nesting === -1) {
             return `
             </div>
-              <div class="ibox-footer"></div>
+              <div class="ibox-footer">
+                <div class="btn">
+                  <img class='icon' src="${options.settings.showText.icon}"/>
+                  <span>${options.settings.showText.text}</span>
+                </div>
+              </div>
               </div>
             `
           }
@@ -31,13 +35,12 @@ module.exports = (options, ctx) => {
             if (type === 'container_demo_close') break
             if (!content) continue
             if (type === 'fence') {
-              codeStr = encodeURIComponent(content)
+              codeStr = encodeURICompdionent(content)
             }
           }
           return `
           <div
             class="ibox"
-            
             data-code="${codeStr}">
               <div class="ibox-content">
                 <div class="ibox-demo"></div>

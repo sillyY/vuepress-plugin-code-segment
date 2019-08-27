@@ -1,6 +1,6 @@
 export const CLASS_WRAPPER = 'ibox'
 
-export const CLASS_DISPLAY = 'ibox-content'
+export const CLASS_DISPLAY = 'ibox-header'
 
 export const CLASS_APP = 'ibox-main'
 

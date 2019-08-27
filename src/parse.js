@@ -1,6 +1,5 @@
 export const $ = function(parent, className) {
-    const node = parent.querySelectorAll(`.${className}`)
-    return node
+    return parent.querySelectorAll(`${className}`)
 }
 
 export const toArray = function(obj) {
