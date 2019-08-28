@@ -1,5 +1,6 @@
-export const $ = function(parent, className) {
-    return parent.querySelectorAll(`${className}`)
+export const $ = function(parent, className, isFirst = true) {
+    const node = parent.querySelectorAll(`${className}`)
+    return isFirst ? node[0] : node
 }
 
 export const toArray = function(obj) {

@@ -17,6 +17,11 @@ module.exports = {
             icon: '/icon-caret-bottom.svg',
             hoverIcon: '/icon-caret-bottom-blue.svg',
             text: 'show code'
+          },
+          hideText: {
+            icon: '/icon-caret-top.svg',
+            hoverIcon: '/icon-caret-top-blue.svg',
+            text: 'hide code'
           }
         }
       }

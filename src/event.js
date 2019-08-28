@@ -2,26 +2,42 @@ import { $ } from './parse'
 function initEvent(node) {
   const footerNode = $(node, '.ibox-footer')
   const codeNode = $(node, '.ibox-code')
-  const iconNode = $(footerNode[0], 'img')
-  initHover(footerNode[0], iconNode[0])
+  const showNode = $(footerNode, '.show')
+  const hideNode = $(footerNode, '.hide')
+  const iconNode = $(showNode, 'img')
+  const hideIconNode = $(hideNode, 'img')
 
-  initClick(footerNode[0], codeNode[0])
+  const iconUrl = window.$VUEPRESS_DEMO_BLOCK.showText.icon,
+    hoverIconUrl = window.$VUEPRESS_DEMO_BLOCK.showText.hoverIcon,
+    HideIconUrl = window.$VUEPRESS_DEMO_BLOCK.hideText.icon,
+    hideHoverIconUrl = window.$VUEPRESS_DEMO_BLOCK.hideText.hoverIcon
+
+  initHover(showNode, iconNode, iconUrl, hoverIconUrl)
+  initHover(hideNode, hideIconNode, HideIconUrl, hideHoverIconUrl)
+  initClick(showNode, codeNode, hideNode)
 }
 
-function initHover(node, icon) {
-  const iconUrl = window.$VUEPRESS_DEMO_BLOCK.showText.icon,
-    hoverIconUrl = window.$VUEPRESS_DEMO_BLOCK.showText.hoverIcon
+function initHover(node, iconNode, iconUrl, hoverIconUrl) {
   node.addEventListener('mouseover', function() {
-    icon.setAttribute('src', hoverIconUrl)
+    iconNode.setAttribute('src', hoverIconUrl)
   })
   node.addEventListener('mouseout', function() {
-    icon.setAttribute('src', iconUrl)
+    iconNode.setAttribute('src', iconUrl)
   })
 }
 
-function initClick(node, handler) {
-  node.addEventListener('click',function(){
-    handler.classList.add('show')
+function initClick(showNode, handler, hideNode) {
+  showNode.addEventListener('click', function() {
+    const height = handler.querySelector('div').clientHeight;
+    console.log(height)
+    handler.style.height = height + 'px'
+    showNode.classList.remove('visible')
+    hideNode.classList.add('visible')
+  })
+  hideNode.addEventListener('click', function() {
+    handler.style.height = '0'
+    showNode.classList.add('visible')
+    hideNode.classList.remove('visible')
   })
 }
 

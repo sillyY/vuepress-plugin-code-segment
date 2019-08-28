@@ -1,15 +1,15 @@
 import { $, getVueDetail } from './parse'
 import initEvent from './event'
 export default function compile() {
-  const nodes = $(document, '.ibox')
+  const nodes = $(document, '.ibox', false)
   if (!nodes || !nodes.length) return
   nodes.forEach(node => {
     node.style.display = 'block'
 
-    const codeNode = $(node, '.ibox-code')
+    const codeNode = $(node, '.ibox-code',)
     const displayNode = $(node, '.ibox-content')
     const footerNode = $(node, '.ibox-footer')
-    const appNode = $(displayNode[0], '.ibox-demo')
+    const appNode = $(displayNode, '.ibox-demo')
 
     const code = decodeURIComponent(node.dataset.code)
 
@@ -19,7 +19,7 @@ export default function compile() {
 
     const Comp = Vue.extend(detail.script)
     const app = new Comp().$mount()
-    appNode[0].appendChild(app.$el)
+    appNode.appendChild(app.$el)
   })
 }
 

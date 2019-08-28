@@ -16,9 +16,13 @@ module.exports = (options, ctx) => {
             return `
             </div>
               <div class="ibox-footer">
-                <div class="btn">
+                <div class="btn show visible">
                   <img src="${options.settings.showText.icon}"/>
                   <span>${options.settings.showText.text}</span>
+                </div>
+                <div class="btn hide">
+                  <img src="${options.settings.hideText.icon}"/>
+                  <span>${options.settings.hideText.text}</span>
                 </div>
               </div>
               </div>
