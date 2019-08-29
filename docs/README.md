@@ -7,9 +7,12 @@ actionLink: /
 - **[pica](https://nodeca.github.io/pica/demo/)** - high quality and fast image
   resize in browser.
 
-<p id='label'>12</p>
+<p id='label'>123</p>
 
 ::: demo
+```tip
+小明和`小红`出去玩  
+```
 
 ```html
 <template>

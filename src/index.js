@@ -36,19 +36,11 @@ module.exports = (options, ctx) => {
 
           for (; i < len; i++) {
             const { type, content, info } = tokens[i]
-            console.log('------------------')
-            console.log('type为: ', type)
-            console.log("content为: ", content)
-            console.log("info为: ", info)
-            console.log('------------------')
             if (type === 'container_demo_close') break
             if (!content) continue
             if (type === 'fence') {
               if (info.trim() === 'tip') {
                 tipStr = require('markdown-it')().render(content)
-                console.log('************************')
-                console.log("tipStr为:", tipStr)
-                console.log('************************')
               }
               codeStr = encodeURIComponent(content)
             }
@@ -57,15 +49,12 @@ module.exports = (options, ctx) => {
           <div
             class="ibox"
             data-code="${codeStr}"
-            tio>
+            data-tip="${tipStr}">
               <div class="ibox-content">
                 <div class="ibox-demo"></div>
               </div>
               <div class="ibox-code">
-                <div class="ibox-tip>
-                  <h1>121212</h1>
-                </div>
-        `
+          `
         }
       })
     }

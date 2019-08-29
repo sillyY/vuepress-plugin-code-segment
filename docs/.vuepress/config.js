@@ -16,12 +16,12 @@ module.exports = {
           showText: {
             icon: '/icon-caret-bottom.svg',
             hoverIcon: '/icon-caret-bottom-blue.svg',
-            text: 'show code'
+            text: '展示代码'
           },
           hideText: {
             icon: '/icon-caret-top.svg',
             hoverIcon: '/icon-caret-top-blue.svg',
-            text: 'hide code'
+            text: '隐藏代码'
           }
         }
       }

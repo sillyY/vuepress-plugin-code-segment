@@ -21,10 +21,6 @@ const getVueJsTpl = js => {
   ${jsContent}
 })`
 }
-// export const getSettings = key =>
-//   window[SETTINGS_KEY] && window[SETTINGS_KEY][key] !== undefined
-//     ? window[SETTINGS_KEY][key]
-//     : DEFAULT_SETTINGS[key]
 
 const getVueScript = (js, html) => {
     const scripts = js.split(/export\s+default/)

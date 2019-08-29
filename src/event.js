@@ -2,6 +2,7 @@ import { $ } from './parse'
 function initEvent(node) {
   const footerNode = $(node, '.ibox-footer')
   const codeNode = $(node, '.ibox-code')
+  const tipNode = $(codeNode, '.language-tip')
   const showNode = $(footerNode, '.show')
   const hideNode = $(footerNode, '.hide')
   const iconNode = $(showNode, 'img')
@@ -15,6 +16,7 @@ function initEvent(node) {
   initHover(showNode, iconNode, iconUrl, hoverIconUrl)
   initHover(hideNode, hideIconNode, HideIconUrl, hideHoverIconUrl)
   initClick(showNode, codeNode, hideNode)
+  setTip(tipNode, node.dataset.tip)
 }
 
 function initHover(node, iconNode, iconUrl, hoverIconUrl) {
@@ -28,7 +30,11 @@ function initHover(node, iconNode, iconUrl, hoverIconUrl) {
 
 function initClick(showNode, handler, hideNode) {
   showNode.addEventListener('click', function() {
-    const height = handler.querySelector('div').clientHeight;
+    let height = 82;
+    var likeArr = handler.querySelectorAll('div')
+    for(let value of likeArr) {
+      height += value.clientHeight
+    }
     handler.style.height = height + 'px'
     showNode.classList.remove('visible')
     hideNode.classList.add('visible')
@@ -38,6 +44,16 @@ function initClick(showNode, handler, hideNode) {
     showNode.classList.add('visible')
     hideNode.classList.remove('visible')
   })
+}
+
+function setTip(self, tip) {
+  // 清空子节点
+  // while (self.hasChildNodes()) {
+  //   self.removeChild(self.firstChild)
+  // }
+
+  // 更换tip
+  self.innerHTML = tip
 }
 
 export default initEvent
