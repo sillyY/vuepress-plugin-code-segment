@@ -29,7 +29,6 @@ function initHover(node, iconNode, iconUrl, hoverIconUrl) {
 function initClick(showNode, handler, hideNode) {
   showNode.addEventListener('click', function() {
     const height = handler.querySelector('div').clientHeight;
-    console.log(height)
     handler.style.height = height + 'px'
     showNode.classList.remove('visible')
     hideNode.classList.add('visible')

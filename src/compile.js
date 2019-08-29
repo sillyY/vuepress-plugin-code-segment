@@ -6,7 +6,7 @@ export default function compile() {
   nodes.forEach(node => {
     node.style.display = 'block'
 
-    const codeNode = $(node, '.ibox-code',)
+    const codeNode = $(node, '.ibox-code')
     const displayNode = $(node, '.ibox-content')
     const footerNode = $(node, '.ibox-footer')
     const appNode = $(displayNode, '.ibox-demo')

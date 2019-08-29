@@ -14,14 +14,15 @@
 }
 
 .ibox-code {
+  position: relative;
   overflow: hidden;
   height: 0;
   padding: 0 !important;
   transition: height .5s;
 }
-.show {
-  /* height: auto;
-  transition: all .5s; */
+.ibox-tip {
+  position: absolute;
+  top: 0;
 }
 
 /* 重写markdown样式 */
