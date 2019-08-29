@@ -3,15 +3,11 @@ home: true
 actionText: My Article →
 actionLink: /
 ---
-
-- **[pica](https://nodeca.github.io/pica/demo/)** - high quality and fast image
-  resize in browser.
-
-<p id='label'>123</p>
+<p id='label'>开发第1次(不记得多少了，从零开始)</p>
 
 ::: demo
 ```tip
-小明和`小红`出去玩  
+> 此处为备注信息
 ```
 
 ```html
