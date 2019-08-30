@@ -3,9 +3,11 @@ home: true
 actionText: My Article →
 actionLink: /
 ---
+
 <p id='label'>开发第1次(不记得多少了，从零开始)</p>
 
 ::: demo
+
 ```tip
 > 此处为备注信息
 ```
@@ -22,7 +24,9 @@ actionLink: /
   export default {
     data: () => ({ num: 1 }),
     methods: {
-      add() { this.num += 1 },
+      add() {
+        this.num += 1
+      },
       reduce() {
         this.num -= 1
       }
@@ -38,4 +42,3 @@ actionLink: /
 ```
 
 :::
-

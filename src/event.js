@@ -16,7 +16,7 @@ function initEvent(node) {
   initHover(showNode, iconNode, iconUrl, hoverIconUrl)
   initHover(hideNode, hideIconNode, HideIconUrl, hideHoverIconUrl)
   initClick(showNode, codeNode, hideNode)
-  setTip(tipNode, node.dataset.tip)
+  tipNode && setTip(tipNode, node.dataset.tip)
 }
 
 function initHover(node, iconNode, iconUrl, hoverIconUrl) {
