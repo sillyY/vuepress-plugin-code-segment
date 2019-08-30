@@ -1,4 +1,4 @@
-import { $, getVueDetail } from './parse'
+import { $, getVueDetail, injectCss } from './parse'
 import initEvent from './event'
 export default function compile() {
   const nodes = $(document, '.ibox', false)
@@ -14,6 +14,8 @@ export default function compile() {
     const code = decodeURIComponent(node.dataset.code)
 
     const detail = getVueDetail(code)
+    // 注册css
+    detail.css && injectCss(detail.css);
     // 传递node，确保事件注册在指定的node节点上
     initEvent(node)
 

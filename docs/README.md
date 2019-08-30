@@ -31,7 +31,8 @@ actionLink: /
 </script>
 <style>
   .box-vue {
-    color: red;
+    background-color: red;
+    color: #fff;
   }
 </style>
 ```
