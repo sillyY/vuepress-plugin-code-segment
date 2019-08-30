@@ -1,11 +1,11 @@
-const path = require('path')
+import path from 'path'
+import { getSettings } from './config'
+
 module.exports = (options, ctx) => {
   return {
     name: 'vuepress-plugin-code-segment',
-    define() {
-      return {
-        SETTINGS: options.settings || {}
-      }
+    define: {
+      SETTINGS: getSettings(options.settings)
     },
     clientRootMixin: path.resolve(__dirname, './mixin.js'),
     extendMarkdown: md => {
@@ -13,16 +13,17 @@ module.exports = (options, ctx) => {
         render: function(tokens, idx) {
           const { nesting, info } = tokens[idx]
           if (nesting === -1) {
+            const config = getSettings(options.settings)
             return `
             </div>
               <div class="ibox-footer">
                 <div class="btn show visible">
-                  <img src="${options.settings.showText.icon}"/>
-                  <span>${options.settings.showText.text}</span>
+                  <img src="${config.showText.icon}"/>
+                  <span>${config.showText.text}</span>
                 </div>
                 <div class="btn hide">
-                  <img src="${options.settings.hideText.icon}"/>
-                  <span>${options.settings.hideText.text}</span>
+                  <img src="${config.hideText.icon}"/>
+                  <span>${config.hideText.text}</span>
                 </div>
               </div>
               </div>

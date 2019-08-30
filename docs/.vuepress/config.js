@@ -10,7 +10,7 @@ module.exports = {
   ],
   plugins: [
     [
-      require('../../src/index.js'),
+      require('../../lib/index.js'),
       {
         settings: {
           showText: {

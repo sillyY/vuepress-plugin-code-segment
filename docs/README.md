@@ -4,7 +4,7 @@ actionText: My Article →
 actionLink: /
 ---
 
-<p id='label'>开发第1次(不记得多少了，从零开始)</p>
+<p id='label'>开发第4次(不记得多少了，已从零开始)</p>
 
 ::: demo
 

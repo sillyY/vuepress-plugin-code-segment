@@ -4,9 +4,11 @@
   "description": "vuepress code segment plugin",
   "main": "src/index.js",
   "scripts": {
-    "start": "vuepress dev docs --no-clear-screen --temp .temp",
+    "start": "vuepress dev docs",
     "dev": "vuepress dev docs --no-clear-screen --temp .temp",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "build": "rollup -c rollup.config.js",
+    "watch": "rollup -wc rollup.config.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +26,18 @@
   },
   "homepage": "https://github.com/sillyY/vuepress-plugin-code-segment#readme",
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "autoprefixer": "^9.6.1",
     "markdown-it-container": "^2.0.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-string": "^3.0.0",
+    "rollup-plugin-uglify": "^6.0.2",
     "vuepress": "^1.0.3"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.5.5"
   }
 }
