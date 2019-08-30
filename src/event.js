@@ -16,7 +16,7 @@ function initEvent(node) {
   initHover(showNode, iconNode, iconUrl, hoverIconUrl)
   initHover(hideNode, hideIconNode, HideIconUrl, hideHoverIconUrl)
   initClick(showNode, codeNode, hideNode)
-  tipNode && setTip(tipNode, node.dataset.tip)
+  tipNode && replaceTip(tipNode, node.dataset.tip)
 }
 
 function initHover(node, iconNode, iconUrl, hoverIconUrl) {
@@ -46,13 +46,8 @@ function initClick(showNode, handler, hideNode) {
   })
 }
 
-function setTip(self, tip) {
-  // 清空子节点
-  // while (self.hasChildNodes()) {
-  //   self.removeChild(self.firstChild)
-  // }
-
-  // 更换tip
+// 更换tip
+function replaceTip(self, tip) {
   self.innerHTML = tip
 }
 
