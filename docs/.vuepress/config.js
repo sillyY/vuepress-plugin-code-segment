@@ -3,26 +3,17 @@ module.exports = {
   description: 'code segment',
   head: [
     ['script', { src: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js' }],
-    [
-      'script',
-      { src: 'https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js' }
-    ]
+    ['script', {src: 'https://unpkg.com/element-ui/lib/index.js'}],
   ],
   plugins: [
     [
       require('../../lib/index.js'),
       {
         settings: {
-          showText: {
-            icon: '/icon-caret-bottom.svg',
-            hoverIcon: '/icon-caret-bottom-blue.svg',
-            text: '展示代码'
-          },
-          hideText: {
-            icon: '/icon-caret-top.svg',
-            hoverIcon: '/icon-caret-top-blue.svg',
-            text: '隐藏代码'
-          }
+          showText: '展示代码',
+          hideText: '隐藏代码',
+          jsLib: ['https://unpkg.com/element-ui/lib/index.js'],
+          cssLib: ['https://unpkg.com/element-ui/lib/theme-chalk/index.css']
         }
       }
     ]

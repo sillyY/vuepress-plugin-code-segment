@@ -1,4 +1,4 @@
-import './assets/style/style.css'
+import './style.css'
 import compile from './compile'
 
 export default {

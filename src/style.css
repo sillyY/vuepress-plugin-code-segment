@@ -57,11 +57,56 @@
   height: 100%;
 }
 .ibox-footer > .btn > span {
+  position: relative;
   margin-left: 10px;
   font-size: 16px;
   font-weight: 500;
   line-height: 22px;
   color: #ccc;
+}
+.ibox-footer > .hide > span:before {
+  position: absolute;
+  left: -28px;
+  top: 5px;
+  width: 0;
+  height: 0;
+  content: '';
+  border-style: solid;
+  border-width: 0 9px 13px 9px;
+  border-color: transparent transparent #ccc transparent;
+}
+.ibox-footer:hover > .hide > span:before {
+  position: absolute;
+  left: -28px;
+  top: 5px;
+  width: 0;
+  height: 0;
+  content: '';
+  border-style: solid;
+  border-width: 0 9px 13px 9px;
+  border-color: transparent transparent #5075ff transparent;
+}
+.ibox-footer > .show > span:before {
+  position: absolute;
+  left: -28px;
+  top: 5px;
+  width: 0;
+  height: 0;
+  content: '';
+  border-style: solid;
+  border-width: 13px 9px 0 9px;
+  border-color: #ccc transparent transparent transparent;
+}
+.ibox-footer:hover > .show > span:before {
+  position: absolute;
+  left: -28px;
+  top: 5px;
+  width: 0;
+  height: 0;
+  content: '';
+  border-style: solid;
+  border-width: 13px 9px 0 9px;
+  border-color: #5075ff transparent transparent transparent;
 }
 .ibox-footer > .visible {
   display: flex;

@@ -11,19 +11,17 @@ module.exports = (options, ctx) => {
     extendMarkdown: md => {
       md.use(require('markdown-it-container'), 'demo', {
         render: function(tokens, idx) {
-          const { nesting, info } = tokens[idx]
+          const { nesting } = tokens[idx]
+          const config = getSettings(options.settings)
           if (nesting === -1) {
-            const config = getSettings(options.settings)
             return `
             </div>
               <div class="ibox-footer">
                 <div class="btn show visible">
-                  <img src="${config.showText.icon}"/>
-                  <span>${config.showText.text}</span>
+                  <span>${config.showText}</span>
                 </div>
                 <div class="btn hide">
-                  <img src="${config.hideText.icon}"/>
-                  <span>${config.hideText.text}</span>
+                  <span>${config.hideText}</span>
                 </div>
               </div>
               </div>
@@ -50,6 +48,7 @@ module.exports = (options, ctx) => {
           <div
             class="ibox"
             data-code="${codeStr}"
+            data-config="${encodeURIComponent(JSON.stringify(config))}"
             data-tip="${tipStr}">
               <div class="ibox-content">
                 <div class="ibox-demo"></div>

@@ -52,7 +52,7 @@ const getVueScript = (js, html) => {
   return scriptObj
 }
 
-export const getVueDetail = code => {
+export const getVueDetail = (code, config) => {
   const cssBlock = code.match(/<style>([\s\S]+)<\/style>/)
   const htmlBlock = code.match(/<template>([\s\S]+)<\/template>/)
   const jsBlock = code.match(/<script>([\s\S]+)<\/script>/)
@@ -60,14 +60,12 @@ export const getVueDetail = code => {
     css: cssBlock && cssBlock[1].replace(/^\n|\n$/g, ''),
     html: htmlBlock && htmlBlock[1].replace(/^\n|\n$/g, ''),
     js: jsBlock && jsBlock[1].replace(/^\n|\n$/g, ''),
-    jsLib: ['https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js']
-    //   cssLib: config.cssLib || []
+    jsLib: config.jsLib || [],
+    cssLib: config.cssLib || []
   }
   result.htmlTpl = getHtmlTpl(result.html)
   result.jsTpl = getVueJsTpl(result.js)
   result.script = getVueScript(result.js, result.html)
-  // const vueResource = getSettings('vue')
-  // result.jsLib.unshift(vueResource)
   return result
 }
 
@@ -82,4 +80,13 @@ export const injectCss = css => {
   const style = h('style', { innerHTML: css })
   document.body.appendChild(style)
   _once[css] = true
+}
+export const injectScript = lib => {
+  if (_once[lib]) return
+  var head = document.getElementsByTagName('head')[0]
+  var script = document.createElement('script')
+  script.type = 'text/javascript'
+  script.src = lib
+  head.appendChild(script)
+  _once[lib] = true
 }
