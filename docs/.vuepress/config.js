@@ -3,7 +3,15 @@ module.exports = {
   description: 'code segment',
   head: [
     ['script', { src: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js' }],
-    ['script', {src: 'https://unpkg.com/element-ui/lib/index.js'}],
+    ['script', { src: 'https://unpkg.com/element-ui/lib/index.js' }],
+    ['sciprt', { src: 'https://cdn.jsdelivr.net/npm/ele-vue/lib/ele-vue.umd.min.js'}],
+    [
+      'link',
+      {
+        rel: 'stylesheet',
+        href: 'https://unpkg.com/element-ui/lib/theme-chalk/index.css'
+      }
+    ]
   ],
   plugins: [
     [

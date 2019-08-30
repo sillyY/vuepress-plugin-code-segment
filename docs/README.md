@@ -4,7 +4,7 @@ actionText: My Article →
 actionLink: /
 ---
 
-<p id='label'>开发第15次(不记得多少了，已从零开始), 用作刷新缓存</p>
+<p id='label'>开发第18次(不记得多少了，已从零开始), 用作刷新缓存</p>
 
 ::: demo
 
@@ -15,28 +15,74 @@ actionLink: /
 ```html
 <template>
   <section>
-    <div class="box-vue">{{num}}</div>
-    <button @click="add">+</button>
-    <button @click="reduce">-</button>
     <el-button>默认按钮</el-button>
     <el-button type="primary">主要按钮</el-button>
     <el-button type="success">成功按钮</el-button>
     <el-button type="info">信息按钮</el-button>
     <el-button type="warning">警告按钮</el-button>
     <el-button type="danger">危险按钮</el-button>
+    <el-row>
+      <table :layout="layout" :list="list">
+        <template #address="{scope}"
+          >{{scope.row.address}}</template
+        >
+        <template #operate="{scope}">
+          <el-button @click="handleScope(scope)">编辑</el-button>
+        </template>
+      </table>
+    </el-row>
   </section>
 </template>
 <script>
   export default {
-    data: () => ({ num: 1 }),
-    methods: {
-      add() {
-        this.num += 1
+    data: () => ({
+      layout: {
+        border: true,
+        select: true,
+        index: true,
+        stripe: true,
+        operate: {
+          visible: true
+        },
+        props: [
+          {
+            attr: 'date',
+            name: '日期'
+          },
+          {
+            attr: 'name',
+            name: '姓名'
+          },
+          {
+            attr: 'address',
+            name: '地址',
+            slot: 'address'
+          }
+        ]
       },
-      reduce() {
-        this.num -= 1
-      }
-    }
+      list: [
+        {
+          date: '2016-05-02',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        },
+        {
+          date: '2016-05-04',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1517 弄'
+        },
+        {
+          date: '2016-05-01',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1519 弄'
+        },
+        {
+          date: '2016-05-03',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1516 弄'
+        }
+      ]
+    })
   }
 </script>
 <style>

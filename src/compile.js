@@ -1,4 +1,4 @@
-import { $, getVueDetail, injectCss, injectScript } from './parse'
+import { $, getVueDetail, injectCss, injectScript, injectCssLib } from './parse'
 import initEvent from './event'
 export default function compile() {
   const nodes = $(document, '.ibox', false)
@@ -21,6 +21,7 @@ export default function compile() {
 
     // 注册script
     // detail.jsLib && detail.jsLib.map(v => injectScript(v))
+    // detail.cssLib && detail.cssLib.map(v=>injectCssLib(v))
 
     // 传递node，确保事件注册在指定的node节点上
     initEvent(node)

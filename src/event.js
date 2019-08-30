@@ -11,7 +11,6 @@ function initEvent(node) {
 }
 
 function initClick(showNode, handler, hideNode) {
-  console.log(showNode, handler, hideNode)
   showNode.addEventListener('click', function() {
     let height = 82;
     var likeArr = handler.querySelectorAll('div')

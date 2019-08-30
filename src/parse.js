@@ -90,3 +90,12 @@ export const injectScript = lib => {
   head.appendChild(script)
   _once[lib] = true
 }
+export const injectCssLib = lib => {
+  if (_once[lib]) return
+  var head = document.getElementsByTagName('head')[0]
+  var script = document.createElement('link')
+  script.type = 'text/css'
+  script.src = lib
+  head.appendChild(script)
+  _once[lib] = true
+}
