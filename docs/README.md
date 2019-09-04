@@ -4,7 +4,7 @@ actionText: My Article →
 actionLink: /
 ---
 
-<p id='label'>开发第18次(不记得多少了，已从零开始), 用作刷新缓存</p>
+<p id='label'>开发第22次(不记得多少了，已从零开始), 用作刷新缓存</p>
 
 ::: demo
 
@@ -15,22 +15,14 @@ actionLink: /
 ```html
 <template>
   <section>
-    <el-button>默认按钮</el-button>
-    <el-button type="primary">主要按钮</el-button>
-    <el-button type="success">成功按钮</el-button>
-    <el-button type="info">信息按钮</el-button>
-    <el-button type="warning">警告按钮</el-button>
-    <el-button type="danger">危险按钮</el-button>
-    <el-row>
-      <table :layout="layout" :list="list">
-        <template #address="{scope}"
-          >{{scope.row.address}}</template
-        >
-        <template #operate="{scope}">
-          <el-button @click="handleScope(scope)">编辑</el-button>
-        </template>
-      </table>
-    </el-row>
+    <table :layout="layout" :list="list">
+      <template #address="{scope}"
+        >{{scope.row.address}}</template
+      >
+      <template #operate="{scope}">
+        <el-button @click="handleScope(scope)">编辑</el-button>
+      </template>
+    </table>
   </section>
 </template>
 <script>

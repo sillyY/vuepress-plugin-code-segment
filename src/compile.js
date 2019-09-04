@@ -13,6 +13,7 @@ export default function compile() {
 
     const code = decodeURIComponent(node.dataset.code)
     let config = decodeURIComponent(node.dataset.config)
+
     config = config ? JSON.parse(config) : {}
 
     const detail = getVueDetail(code, config)
@@ -26,6 +27,7 @@ export default function compile() {
     // 传递node，确保事件注册在指定的node节点上
     initEvent(node)
 
+    console.log(detail.script)
     const Comp = Vue.extend(detail.script)
     const app = new Comp().$mount()
     appNode.appendChild(app.$el)
