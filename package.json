@@ -4,8 +4,8 @@
   "description": "vuepress code segment plugin",
   "main": "src/index.js",
   "scripts": {
-    "start": "vuepress dev docs",
-    "dev": "vuepress dev docs --no-clear-screen --temp .temp",
+    "dev": "vuepress dev docs",
+    "start": "vuepress dev docs --no-clear-screen --temp .temp",
     "docs:build": "vuepress build docs",
     "build": "rollup -c rollup.config.js",
     "watch": "rollup -wc rollup.config.js"

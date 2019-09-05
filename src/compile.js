@@ -16,12 +16,13 @@ export default function compile() {
   
     const detail = getVueDetail(code, config)
 
-    // 传递node，确保事件注册在指定的node节点上
-    initEvent(node)
-
+    
     const Comp = Vue.extend(detail.script)
     const app = new Comp().$mount()
     appNode.appendChild(app.$el)
+    
+    // 传递node，确保事件注册在指定的node节点上
+    initEvent(node)
   })
 }
 
