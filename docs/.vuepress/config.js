@@ -4,7 +4,7 @@ module.exports = {
   head: [
     ['script', { src: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js' }],
     ['script', { src: 'https://unpkg.com/element-ui/lib/index.js' }],
-    ['script', { src: 'https://cdn.jsdelivr.net/npm/ele-vue/lib/ele-vue.common.min.js'}],
+    ['script', { src: 'https://cdn.jsdelivr.net/npm/ele-vue/lib/ele-vue.umd.min.js'}],
     [
       'link',
       {
@@ -15,15 +15,13 @@ module.exports = {
   ],
   plugins: [
     [
-      require('../../src/index.js'),
-      // {
-      //   settings: {
-      //     showText: '展示代码',
-      //     hideText: '隐藏代码',
-      //     jsLib: ['https://unpkg.com/element-ui/lib/index.js'],
-      //     cssLib: ['https://unpkg.com/element-ui/lib/theme-chalk/index.css']
-      //   }
-      // }
+      require('../../lib/index.js'),
+      {
+        settings: {
+          showText: '展示代码',
+          hideText: '隐藏代码'
+        }
+      }
     ]
   ],
   extraWatchFiles: ['../src/index.js', '../src/compile.js', '../src/mixin.js']

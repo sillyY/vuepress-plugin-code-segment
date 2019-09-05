@@ -1,10 +1,10 @@
-export const CLASS_WRAPPER = 'ibox'
+const CLASS_WRAPPER = 'ibox'
 
-export const CLASS_DISPLAY = 'ibox-header'
+const CLASS_DISPLAY = 'ibox-header'
 
-export const CLASS_APP = 'ibox-main'
+const CLASS_APP = 'ibox-main'
 
-export const CLASS_CODE = 'ibox-footer'
+const CLASS_CODE = 'ibox-footer'
 
 const SETTINGS = {
   showText: '展示代码',

@@ -17,21 +17,14 @@ export default function compile() {
     config = config ? JSON.parse(config) : {}
 
     const detail = getVueDetail(code, config)
-    // 注册css
-    detail.css && injectCss(detail.css)
-
-    // 注册script
-    // detail.jsLib && detail.jsLib.map(v => injectScript(v))
-    // detail.cssLib && detail.cssLib.map(v=>injectCssLib(v))
 
     // 传递node，确保事件注册在指定的node节点上
     initEvent(node)
 
-    console.log(detail.script)
     const Comp = Vue.extend(detail.script)
     const app = new Comp().$mount()
     appNode.appendChild(app.$el)
   })
 }
 
-function initVue() {}
+// function initVue() {}

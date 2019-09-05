@@ -1,23 +1,20 @@
-// import path from 'path'
-// import { getSettings } from './config'
-const path = require('path')
+import path from 'path'
+import { getSettings } from './config'
+// const path = require('path')
+// const {getSettings} = require('./config')
 
 module.exports = (options, ctx) => {
   return {
     name: 'vuepress-plugin-code-segment',
     define: {
-      SETTINGS: {},
+      SETTINGS:  getSettings(options.settings)
     },
     clientRootMixin: path.resolve(__dirname, './mixin.js'),
     extendMarkdown: md => {
       md.use(require('markdown-it-container'), 'demo', {
         render: function(tokens, idx) {
-          console.log('--------------------')
-          console.log(tokens)
-          console.log('--------------------')
           const { nesting } = tokens[idx]
-          // const config = getSettings(options.settings)
-          const config = {}
+          const config = getSettings(options.settings)
           if (nesting === -1) {
             return `
             </div>
@@ -46,15 +43,9 @@ module.exports = (options, ctx) => {
               if (info.trim() === 'tip') {
                 tipStr = require('markdown-it')().render(content)
               }
-              console.log('************************')
-              console.log(content)
-              console.log('************************')
               codeStr = encodeURIComponent(content)
             }
           }
-          console.log('----------------------------')
-          console.log(codeStr)
-          console.log('----------------------------')
           return `
           <div
             class="ibox"

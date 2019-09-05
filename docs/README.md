@@ -4,7 +4,7 @@ actionText: My Article →
 actionLink: /
 ---
 
-<p id='label'>开发第22次(不记得多少了，已从零开始), 用作刷新缓存</p>
+<p id='label'>开发第24次(不记得多少了，已从零开始), 用作刷新缓存</p>
 
 ::: demo
 
@@ -15,14 +15,14 @@ actionLink: /
 ```html
 <template>
   <section>
-    <table :layout="layout" :list="list">
+    <Table :layout="layout" :list="list">
       <template #address="{scope}"
         >{{scope.row.address}}</template
       >
       <template #operate="{scope}">
         <el-button @click="handleScope(scope)">编辑</el-button>
       </template>
-    </table>
+    </Table>
   </section>
 </template>
 <script>
@@ -74,7 +74,12 @@ actionLink: /
           address: '上海市普陀区金沙江路 1516 弄'
         }
       ]
-    })
+    }),
+    methods: {
+      handleScope(value) {
+        console.log(value)
+      }
+    }
   }
 </script>
 <style>
