@@ -5,8 +5,6 @@ import resolve from 'rollup-plugin-node-resolve'
 import postcss from 'rollup-plugin-postcss'
 import { string } from 'rollup-plugin-string'
 
-console.log(string.string)
-
 export default [
   {
     input: 'src/index.js',

@@ -111,5 +111,15 @@
 .ibox-footer > .visible {
   display: flex;
 }
+.is-fixed {
+  position: fixed;
+  bottom: 0;
+  z-index: 99;
+  width: 738px;
+  border-radius: 0;
+}
 
 /* 初始化样式 */
+.el-table table {
+  margin: 0;
+}

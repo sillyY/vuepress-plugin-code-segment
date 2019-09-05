@@ -14,7 +14,7 @@ const SETTINGS = {
   cssLib: []
 }
 
-export const getSettings = options => {
+const getSettings = options => {
   let opts = {}
 
   for (let key in options) {
@@ -33,4 +33,8 @@ export const getSettings = options => {
     }
   }
   return opts
+}
+
+module.exports = {
+  getSettings
 }

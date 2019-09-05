@@ -4,7 +4,7 @@ module.exports = {
   head: [
     ['script', { src: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js' }],
     ['script', { src: 'https://unpkg.com/element-ui/lib/index.js' }],
-    ['script', { src: 'https://cdn.jsdelivr.net/npm/ele-vue/lib/ele-vue.umd.min.js'}],
+    ['script', { src: 'https://cdn.jsdelivr.net/npm/ele-vue@0.2.8/lib/ele-vue.umd.min.js'}],
     [
       'link',
       {
@@ -15,7 +15,7 @@ module.exports = {
   ],
   plugins: [
     [
-      require('../../lib/index.js'),
+      require('../../src/index.js'),
       {
         settings: {
           showText: '展示代码',

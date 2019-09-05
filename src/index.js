@@ -1,7 +1,9 @@
-import path from 'path'
-import { getSettings } from './config'
-// const path = require('path')
-// const {getSettings} = require('./config')
+// import path from 'path'
+// import { getSettings } from './config'
+const path = require('path')
+const {getSettings} = require('./config')
+
+const map = new Set()
 
 module.exports = (options, ctx) => {
   return {
@@ -32,11 +34,11 @@ module.exports = (options, ctx) => {
 
           let codeStr = '',
             tipStr = ''
-          let i = 0,
+          let i = idx,
             len = tokens.length
 
           for (; i < len; i++) {
-            const { type, content, info } = tokens[i]
+            const { type, content, info, map } = tokens[i]
             if (type === 'container_demo_close') break
             if (!content) continue
             if (type === 'fence') {
