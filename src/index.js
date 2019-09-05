@@ -9,14 +9,14 @@ module.exports = (options, ctx) => {
   return {
     name: 'vuepress-plugin-code-segment',
     define: {
-      SETTINGS:  getSettings(options.settings)
+      SETTINGS:  getSettings(options)
     },
     clientRootMixin: path.resolve(__dirname, './mixin.js'),
     extendMarkdown: md => {
       md.use(require('markdown-it-container'), 'demo', {
         render: function(tokens, idx) {
           const { nesting } = tokens[idx]
-          const config = getSettings(options.settings)
+          const config = getSettings(options)
           if (nesting === -1) {
             return `
             </div>

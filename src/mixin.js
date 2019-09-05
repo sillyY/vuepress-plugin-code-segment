@@ -3,7 +3,7 @@ import compile from './compile'
 
 export default {
     mounted () {
-        window.$VUEPRESS_DEMO_BLOCK = SETTINGS
+        window.$VUEPRESS_CODE_SEGMENT = SETTINGS
         compile()
     },
     updated () {

@@ -1,4 +1,5 @@
 import { $ } from './parse'
+import { getSettings } from './config'
 function initEvent(node) {
   const footerNode = $(node, '.ibox-footer')
   const codeNode = $(node, '.ibox-code')
@@ -9,6 +10,7 @@ function initEvent(node) {
 
   initClick(showNode, codeNode, hideNode, footerNode)
   initFixed(codeNode, footerNode, contentNode)
+  initHeight(contentNode)
   tipNode && replaceTip(tipNode, node.dataset.tip)
 }
 
@@ -71,6 +73,13 @@ function initFixed(codeNode, footerNode, contentNode) {
       footerNode.classList.remove('is-fixed')
     }
   })
+}
+function initHeight(node) {
+  const options = getSettings(window.$VUEPRESS_CODE_SEGMENT),
+    minHeight = options.minHeight;
+    if(minHeight <= 40) return
+  node.style.paddingTop = (minHeight-40)/2 + 'px';
+  node.style.paddingBottom = (minHeight-40)/2 + 'px';
 }
 
 // 更换tip
