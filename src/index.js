@@ -1,9 +1,5 @@
-// import path from 'path'
-// import { getSettings } from './config'
-const path = require('path')
-const {getSettings} = require('./config')
-
-const map = new Set()
+import path from 'path'
+import { getSettings } from './config'
 
 module.exports = (options, ctx) => {
   return {
@@ -13,7 +9,7 @@ module.exports = (options, ctx) => {
     },
     clientRootMixin: path.resolve(__dirname, './mixin.js'),
     extendMarkdown: md => {
-      md.use(require('markdown-it-container'), 'demo', {
+      md.use(require('markdown-it-container'), 'code', {
         render: function(tokens, idx) {
           const { nesting } = tokens[idx]
           const config = getSettings(options)
@@ -39,7 +35,7 @@ module.exports = (options, ctx) => {
 
           for (; i < len; i++) {
             const { type, content, info, map } = tokens[i]
-            if (type === 'container_demo_close') break
+            if (type === 'container_code_close') break
             if (!content) continue
             if (type === 'fence') {
               if (info.trim() === 'tip') {

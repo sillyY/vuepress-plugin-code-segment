@@ -12,7 +12,7 @@ const SETTINGS = {
   minHeight: 40
 }
 
-const getSettings = options => {
+export const getSettings = options => {
   let opts = SETTINGS
 
   for (let key in options) {
@@ -27,8 +27,4 @@ const getSettings = options => {
     }
   }
   return opts
-}
-
-module.exports = {
-  getSettings
 }

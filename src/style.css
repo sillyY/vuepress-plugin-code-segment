@@ -26,11 +26,17 @@
 
 /* 重写markdown样式 */
 .language-tip {
+  position: relative;
   margin: 40px;
   padding: 10px;
   background-color: #fff !important;
   border-radius: 8px !important;
   border: 1px solid #ccc;
+}
+.language-tip::before {
+  top: -2.5em !important;
+  right: -2.4em !important;
+  content: 'tip';
 }
 .language-html {
   border-radius: 0 !important;

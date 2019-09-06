@@ -1,4 +1,4 @@
-import { $, getVueDetail, injectCss, injectScript, injectCssLib } from './parse'
+import { $, getVueDetail } from './util'
 import initEvent from './event'
 export default function compile() {
   const nodes = $(document, '.ibox', false)

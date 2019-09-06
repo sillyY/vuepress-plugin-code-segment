@@ -1,5 +1,5 @@
 import './style.css'
-import compile from './compile'
+import compile from './main'
 
 export default {
     mounted () {

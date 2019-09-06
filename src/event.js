@@ -1,4 +1,4 @@
-import { $ } from './parse'
+import { $ } from './util'
 import { getSettings } from './config'
 function initEvent(node) {
   const footerNode = $(node, '.ibox-footer')

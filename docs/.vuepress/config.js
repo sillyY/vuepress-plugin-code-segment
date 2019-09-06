@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'vuepress-plugin-code-segment-demo',
+  title: 'vuepress-plugin-code-segment',
   description: 'code segment',
   head: [
     ['script', { src: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js' }],
@@ -15,7 +15,7 @@ module.exports = {
   ],
   plugins: [
     [
-      require('../../src/index.js'),
+      require('../../lib/index.js'),
       {
           showText: '',
           hideText: '隐藏代码'
