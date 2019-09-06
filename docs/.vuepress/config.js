@@ -1,22 +1,4 @@
 module.exports = {
-  base: '/vuepress-plugin-demo-block/',
-  head: [
-    ['script', { src: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js' }],
-    ['script', { src: 'https://unpkg.com/element-ui/lib/index.js' }],
-    [
-      'script',
-      {
-        src: 'https://cdn.jsdelivr.net/npm/ele-vue@0.2.8/lib/ele-vue.umd.min.js'
-      }
-    ],
-    [
-      'link',
-      {
-        rel: 'stylesheet',
-        href: 'https://unpkg.com/element-ui/lib/theme-chalk/index.css'
-      }
-    ]
-  ],
   locales: {
     '/': {
       lang: 'en-US',
@@ -54,6 +36,24 @@ module.exports = {
       }
     }
   },
+  base: '/vuepress-plugin-code-segment/',
+  head: [
+    ['script', { src: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js' }],
+    ['script', { src: 'https://unpkg.com/element-ui/lib/index.js' }],
+    [
+      'script',
+      {
+        src: 'https://cdn.jsdelivr.net/npm/ele-vue@0.2.8/lib/ele-vue.umd.min.js'
+      }
+    ],
+    [
+      'link',
+      {
+        rel: 'stylesheet',
+        href: 'https://unpkg.com/element-ui/lib/theme-chalk/index.css'
+      }
+    ]
+  ],
   plugins: [
     [
       require('../../lib/index.js'),
@@ -69,7 +69,7 @@ function genSidebarConfig(title) {
     {
       title,
       collapsable: false,
-      children: ['', 'vue','settings']
+      children: ['', 'vue', 'settings']
     }
   ]
 }

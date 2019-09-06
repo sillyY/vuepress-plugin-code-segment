@@ -19,7 +19,7 @@ cd docs/.vuepress/dist
 
 git init
 git add -A
-git commit -m 'deploy'
+git commit -m 'deploy docs'
 
 # # 如果发布到 https://<USERNAME>.github.io
 # git push -f https://github.com/sillyY/sillyY.github.io.git master
@@ -29,3 +29,5 @@ git commit -m 'deploy'
 git push -f git@github.com:sillyY/vuepress-plugin-code-segment.git master:gh-pages
 
 cd -
+
+rm -rf docs/.vuepress/dist
