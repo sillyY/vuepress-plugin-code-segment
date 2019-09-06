@@ -19,9 +19,11 @@ export default function compile() {
     // 注册组件样式
     detail.css && injectCss(detail.css);
     
+    
     const Comp = Vue.extend(detail.script)
     const app = new Comp().$mount()
-    appNode.appendChild(app.$el)
+    // 修复因滚动多次触发编译，导致多个组件内容
+    Array.from(appNode.children).length < 1 && appNode.appendChild(app.$el)
     
     // 传递node，确保事件注册在指定的node节点上
     initEvent(node)

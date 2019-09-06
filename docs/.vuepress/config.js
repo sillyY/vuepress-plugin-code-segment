@@ -40,6 +40,7 @@ module.exports = {
   head: [
     ['script', { src: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js' }],
     ['script', { src: 'https://unpkg.com/element-ui/lib/index.js' }],
+    ['script', { src: 'https://unpkg.com/iview/dist/iview.min.js'}],
     [
       'script',
       {
@@ -51,6 +52,13 @@ module.exports = {
       {
         rel: 'stylesheet',
         href: 'https://unpkg.com/element-ui/lib/theme-chalk/index.css'
+      }
+    ],
+    [
+      'link',
+      {
+        rel: 'stylesheet',
+        href: 'https://unpkg.com/iview/dist/styles/iview.css'
       }
     ]
   ],
