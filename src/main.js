@@ -1,4 +1,4 @@
-import { $, getVueDetail } from './util'
+import { $, getVueDetail, injectCss } from './util'
 import initEvent from './event'
 export default function compile() {
   const nodes = $(document, '.ibox', false)
@@ -16,6 +16,8 @@ export default function compile() {
   
     const detail = getVueDetail(code, config)
 
+    // 注册组件样式
+    detail.css && injectCss(detail.css);
     
     const Comp = Vue.extend(detail.script)
     const app = new Comp().$mount()
@@ -25,5 +27,3 @@ export default function compile() {
     initEvent(node)
   })
 }
-
-// function initVue() {}

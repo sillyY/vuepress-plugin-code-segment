@@ -58,7 +58,7 @@ module.exports = {
     [
       require('../../lib/index.js'),
       {
-        showText: '',
+        showText: '显示代码',
         hideText: '隐藏代码'
       }
     ]
