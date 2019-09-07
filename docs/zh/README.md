@@ -4,7 +4,7 @@ Vuepress-Plugin-Code-Segment 帮助你在编写文档时添加 vue 示例。当�
 
 ## 安装
   
-### 安装 vuepress
+### 安装 Vuepress
 <br>
 参考官方文档 [Vuepress](https://v1.vuepress.vuejs.org/zh/)
 
@@ -13,7 +13,7 @@ Vuepress-Plugin-Code-Segment 帮助你在编写文档时添加 vue 示例。当�
 ### 安装插件
 
 ```
-npm i -save-dev vuepress-plugin-code-segment
+npm i --save-dev vuepress-plugin-code-segment
 ```
 
 ### 配置 vuepress config
@@ -28,8 +28,9 @@ module.exports = {
 ```
 
 ## 功能
+<br>
 
-- 单一代码同时生成 demo 和 code
-- 代码可折叠，收起按钮自动固定到最下方。
-- 支持展示隐藏按钮文案配置
-- 支持 demo 显示区域高度配置
+- 单一代码同时生成 demo 和 code  
+- 代码可折叠，收起按钮自动固定到最下方  
+- 支持展示隐藏按钮文案配置  
+- 支持 demo 显示区域高度配置  

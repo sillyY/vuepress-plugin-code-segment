@@ -126,7 +126,7 @@
 :::
 
 ## 第三方组件库
-
+<br>
 在代码中如果要使用其他的库，可以引入对应库的 umd 文件到 config.js head 属性中, 然后在代码里直接使用即可。
 
 ```
@@ -150,10 +150,6 @@ module.export = {
 ```
 ::: code
 
-```tip
-> 此处为备注信息1
-` ` ` // <= 删除空格 
-
 ```html
 <template>
   <div class="box3">
@@ -168,14 +164,20 @@ module.export = {
 <script>
   export default {}
 </script>
+<style>
+  .box3 {
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    grid-template-rows: 50% 50%;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+  }
+</style>
 ` ` ` // <= 删除空格 
 :::
 ```
 
 ::: code
-```tip
-> 此处为备注信息1
-```
 ```html
 <template>
   <div class="box3">
@@ -190,6 +192,15 @@ module.export = {
 <script>
   export default {}
 </script>
+<style>
+  .box3 {
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    grid-template-rows: 50% 50%;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+  }
+</style>
 ```
 :::
 
@@ -214,8 +225,13 @@ module.export = {
 </script>
 <style>
   .box4 {
-    padding: 20px;
-    background: rgb(190, 200, 200);
+    display: grid;
+    grid-template-columns: 25% 25% 25%;
+    grid-template-rows: 25% 25% 25%;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    padding: 10px;
+    background: #bec8c8
   }
 </style>
 ` ` ` // <= 删除空格
@@ -241,8 +257,13 @@ module.export = {
 </script>
 <style>
   .box4 {
-    padding: 20px;
-    background: rgb(190, 200, 200);
+    display: grid;
+    grid-template-columns: 25% 25% 25%;
+    grid-template-rows: 25% 25% 25%;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    padding: 10px;
+    background: #bec8c8
   }
 </style>
 ```

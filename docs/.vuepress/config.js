@@ -21,7 +21,31 @@ module.exports = {
         selectText: '🌏Language',
         editLinkText: 'Edit this page on GitHub',
         lastUpdated: 'Last Updated',
+        nav: [
+          {
+            text: '💪Todo',
+            link: '/todo/'
+          },
+          {
+            text: '🙏thanks',
+            link: '/thanks/'
+          }
+        ],
         sidebar: {
+          '/thanks/': [
+            {
+              title: 'reference',
+              collapsable: false,
+              children: ['']
+            }
+          ],
+          '/todo/': [
+            {
+              title: 'Next to do',
+              collapsable: false,
+              children: ['']
+            }
+          ],
           '/': genSidebarConfig('Guide')
         }
       },
