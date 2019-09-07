@@ -1,8 +1,5 @@
 <h1 align="center">Welcome to vuepress-plugin-code-segment 👋</h1>
 <p>
-  <a href="https://www.npmjs.com/package/vuepress-plugin-code-segment">
-    <img alt="Version" src="https://img.shields.io/npm/v/vuepress-plugin-code-segment.svg">
-  </a>
   <a href="http://sillyy.cn/vuepress-plugin-code-segment/">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" target="_blank" />
   </a>
