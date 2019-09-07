@@ -18,6 +18,9 @@
 
 ### 🏠 [Homepage](https://github.com/sillyY/vuepress-plugin-code-segment#readme)
 
+## Document
+[English Docs](http://sillyy.cn/vuepress-plugin-code-segment/) | [中文文档](http://sillyy.cn/vuepress-plugin-code-segment/zh/)
+
 ## Install
 
 ```sh
