@@ -1,12 +1,13 @@
 {
   "name": "vuepress-plugin-code-segment",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "vuepress code segment plugin",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "dev": "vuepress dev docs",
     "start": "vuepress dev docs --no-clear-screen --temp .temp",
     "docs:build": "vuepress build docs",
+    "deploy": "sh deploy.sh",
     "build": "rollup -c rollup.config.js",
     "watch": "rollup -wc rollup.config.js"
   },

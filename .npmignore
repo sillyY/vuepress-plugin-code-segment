@@ -1,0 +1,9 @@
+# 忽略目录
+.temp/
+docs/
+src/
+
+# 忽略指定文件
+.babelrc
+deploy.sh
+rollup.config.js
