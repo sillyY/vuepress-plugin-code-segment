@@ -6,7 +6,7 @@
 ::: code
 ```html
 <template>
-  <div class="box">Hello {{message}}</div>
+  <div class="box1">Hello {{message}}</div>
 </template>
 <script>
   export default {
@@ -18,7 +18,7 @@
   }
 </script>
 <style>
-  .box {
+  .box1 {
     color: green;
   }
 </style>
@@ -30,7 +30,7 @@
 
 ```html
 <template>
-  <div class="box">Hello {{message}}</div>
+  <div class="box1">Hello {{message}}</div>
 </template>
 <script>
   export default {
@@ -42,7 +42,7 @@
   }
 </script>
 <style>
-  .box {
+  .box1 {
     color: green;
   }
 </style>
@@ -60,7 +60,7 @@
 
 ```html
 <template>
-  <div class="box">
+  <div class="box2">
     <button @click="handleClick">看Tip</button>
   </div>
 </template>
@@ -74,7 +74,7 @@
   }
 </script>
 <style>
-  .box {
+  .box2 {
     color: green;
   }
 </style>
@@ -90,7 +90,7 @@
 
 ```html
 <template>
-  <div class="box">
+  <div class="box2">
     <button @click="handleClick">看Tip</button>
   </div>
 </template>
@@ -104,7 +104,7 @@
   }
 </script>
 <style>
-  .box {
+  .box2 {
     color: green;
   }
 </style>
@@ -134,16 +134,16 @@ module.export = {
 
 ### Element-UI 示例
 
-````
+```
 ::: code
 
 ```tip
 > 此处为备注信息1
-````
+` ` ` // <= 删除空格 
 
 ```html
 <template>
-  <div class="box">
+  <div class="box3">
     <el-button>默认按钮</el-button>
     <el-button type="primary">主要按钮</el-button>
     <el-button type="success">成功按钮</el-button>
@@ -155,18 +155,17 @@ module.export = {
 <script>
   export default {}
 </script>
-` ` ` // <= 删除空格 :::
+` ` ` // <= 删除空格 
+:::
 ```
 
 ::: code
-
 ```tip
 > 此处为备注信息1
 ```
-
 ```html
 <template>
-  <div class="box">
+  <div class="box3">
     <el-button>默认按钮</el-button>
     <el-button type="primary">主要按钮</el-button>
     <el-button type="success">成功按钮</el-button>
@@ -179,16 +178,14 @@ module.export = {
   export default {}
 </script>
 ```
-
 :::
 
 ### IView 示例
-
+```
 ::: code
-
 ```html
 <template>
-  <div class="box">
+  <div class="box4">
     <Button type="default" ghost>Default</Button>
     <Button type="primary" ghost>Primary</Button>
     <Button type="dashed" ghost>Dashed</Button>
@@ -203,11 +200,37 @@ module.export = {
   export default {}
 </script>
 <style>
-  .box {
+  .box4 {
+    padding: 20px;
+    background: rgb(190, 200, 200);
+  }
+</style>
+` ` ` // <= 删除空格
+:::
+```
+
+::: code
+```html
+<template>
+  <div class="box4">
+    <Button type="default" ghost>Default</Button>
+    <Button type="primary" ghost>Primary</Button>
+    <Button type="dashed" ghost>Dashed</Button>
+    <Button type="text" ghost>Text</Button>
+    <Button type="info" ghost>Info</Button>
+    <Button type="success" ghost>Success</Button>
+    <Button type="warning" ghost>Warning</Button>
+    <Button type="error" ghost>Error</Button>
+  </div>
+</template>
+<script>
+  export default {}
+</script>
+<style>
+  .box4 {
     padding: 20px;
     background: rgb(190, 200, 200);
   }
 </style>
 ```
-
 :::

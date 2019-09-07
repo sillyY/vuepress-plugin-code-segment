@@ -26,10 +26,13 @@ function initClick(showNode, handler, hideNode, footerNode) {
     hideNode.classList.add('visible')
     footerNode.classList.add('is-fixed')
 
+    const style = getComputedStyle(handler, null)
+    footerNode.style.width = style.width
+
     // code下拉存在0.5s动画，会导致位置获取不准确
     setTimeout(() => {
       resetStatus()
-    }, 500);
+    }, 500)
   })
   hideNode.addEventListener('click', function() {
     handler.style.height = '0'
@@ -47,9 +50,12 @@ function resetStatus() {
       codeNode = $(node, '.ibox-code')
 
     const h1 = contentNode.getBoundingClientRect(),
-    rect = codeNode.getBoundingClientRect()
+      rect = codeNode.getBoundingClientRect()
     // h1.y + h1.height + 80 > height 表示footer上拉超过code部分则取消fixed
-    if (h1.y + h1.height + 80 > height || rect.y + codeNode.scrollHeight < height) {
+    if (
+      h1.y + h1.height + 80 > height ||
+      rect.y + codeNode.scrollHeight < height
+    ) {
       footerNode.classList.remove('is-fixed')
     }
   })
@@ -61,9 +67,11 @@ function initFixed(codeNode, footerNode, contentNode) {
     if (rect.height === 0) return
     if (rect.height + rect.y > height) {
       footerNode.classList.add('is-fixed')
+
+      const style = getComputedStyle(codeNode, null)
+      footerNode.style.width = style.width
     }
     const h1 = contentNode.getBoundingClientRect()
-
 
     if (
       rect.height + rect.y + 91 < height ||
@@ -76,10 +84,10 @@ function initFixed(codeNode, footerNode, contentNode) {
 }
 function initHeight(node) {
   const options = getSettings(window.$VUEPRESS_CODE_SEGMENT),
-    minHeight = options.minHeight;
-    if(minHeight <= 40) return
-  node.style.paddingTop = (minHeight-40)/2 + 'px';
-  node.style.paddingBottom = (minHeight-40)/2 + 'px';
+    minHeight = options.minHeight
+  if (minHeight <= 40) return
+  node.style.paddingTop = (minHeight - 40) / 2 + 'px'
+  node.style.paddingBottom = (minHeight - 40) / 2 + 'px'
 }
 
 // 更换tip
