@@ -5,6 +5,7 @@ Vuepress-Plugin-Code-Segment helps you add vue examples when writing a document.
 
 ### Vuepress
 <br>
+
 official document [Vuepress](https://v1.vuepress.vuejs.org/zh/)
 
 > The plugin only supports V1.x and above, and the 0.x version has no plugin system.

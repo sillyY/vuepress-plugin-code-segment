@@ -6,6 +6,7 @@ Vuepress-Plugin-Code-Segment 帮助你在编写文档时添加 vue 示例。当�
   
 ### 安装 Vuepress
 <br>
+
 参考官方文档 [Vuepress](https://v1.vuepress.vuejs.org/zh/)
 
 > 该插件仅支持 V1.x 以上版本, 0.x 版本无插件系统
