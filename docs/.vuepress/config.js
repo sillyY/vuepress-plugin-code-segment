@@ -18,7 +18,7 @@ module.exports = {
     locales: {
       '/': {
         label: 'English',
-        selectText: 'Language',
+        selectText: '🌏Language',
         editLinkText: 'Edit this page on GitHub',
         lastUpdated: 'Last Updated',
         sidebar: {
@@ -27,10 +27,34 @@ module.exports = {
       },
       '/zh/': {
         label: '简体中文',
-        selectText: '选择语言',
+        selectText: '🌏选择语言',
         editLinkText: '在 GitHub 上编辑此页',
         lastUpdated: '上次更新',
+        nav: [
+          {
+            text: '💪Todo',
+            link: '/zh/todo/'
+          },
+          {
+            text: '🙏感谢',
+            link: '/zh/thanks/'
+          }
+        ],
         sidebar: {
+          '/zh/thanks/': [
+            {
+              title: '参考',
+              collapsable: false,
+              children: ['']
+            }
+          ],
+          '/zh/todo/': [
+            {
+              title: 'Next to do',
+              collapsable: false,
+              children: ['']
+            }
+          ],
           '/zh/': genSidebarConfig('指南')
         }
       }
@@ -40,7 +64,7 @@ module.exports = {
   head: [
     ['script', { src: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js' }],
     ['script', { src: 'https://unpkg.com/element-ui/lib/index.js' }],
-    ['script', { src: 'https://unpkg.com/iview/dist/iview.min.js'}],
+    ['script', { src: 'https://unpkg.com/iview/dist/iview.min.js' }],
     [
       'script',
       {

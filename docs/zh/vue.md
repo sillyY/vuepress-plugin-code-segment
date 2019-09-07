@@ -107,6 +107,19 @@
   .box2 {
     color: green;
   }
+  .box2 > button {
+    background-color: #1890ff;
+    height: 32px;
+    padding: 0 15px;
+    border: 1px solid transparent;
+    border-color: #1890ff;
+    border-radius: 4px;
+    outline:none;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.5; 
+    cursor: pointer; 
+  }
 </style>
 ```
 
